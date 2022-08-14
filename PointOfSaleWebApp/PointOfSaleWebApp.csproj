@@ -116,6 +116,7 @@
     <Content Include="Images\POS-Banner.jpg" />
     <Content Include="Images\report.jpg" />
     <Content Include="Images\sales.jpg" />
+    <Content Include="ItemCoding.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Web.config" />
@@ -134,6 +135,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemCoding.aspx.cs">
+      <DependentUpon>ItemCoding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemCoding.aspx.designer.cs">
+      <DependentUpon>ItemCoding.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

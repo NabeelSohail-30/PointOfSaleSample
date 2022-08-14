@@ -10,7 +10,7 @@
 namespace PointOfSaleWebApp {
     
     
-    public partial class AccountsDetails {
+    public partial class ItemCoding {
         
         /// <summary>
         /// form1 control.
@@ -40,112 +40,40 @@ namespace PointOfSaleWebApp {
         protected global::System.Web.UI.WebControls.Panel panelAdd;
         
         /// <summary>
-        /// AccId control.
+        /// Code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AccId;
+        protected global::System.Web.UI.WebControls.TextBox Code;
         
         /// <summary>
-        /// AccTitle control.
+        /// Desc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AccTitle;
+        protected global::System.Web.UI.WebControls.TextBox Desc;
         
         /// <summary>
-        /// OpnBal control.
+        /// Catg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox OpnBal;
+        protected global::System.Web.UI.WebControls.DropDownList Catg;
         
         /// <summary>
-        /// BalType control.
+        /// Unit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BalType;
-        
-        /// <summary>
-        /// Nature control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nature;
-        
-        /// <summary>
-        /// STax control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox STax;
-        
-        /// <summary>
-        /// NTN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NTN;
-        
-        /// <summary>
-        /// Phone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Phone;
-        
-        /// <summary>
-        /// AccType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AccType;
-        
-        /// <summary>
-        /// Address control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Address;
-        
-        /// <summary>
-        /// LeaveAc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox LeaveAc;
-        
-        /// <summary>
-        /// ActiveAc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ActiveAc;
+        protected global::System.Web.UI.WebControls.TextBox Unit;
         
         /// <summary>
         /// btnAdd control.
@@ -202,21 +130,12 @@ namespace PointOfSaleWebApp {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// SqlDataSourceAccType control.
+        /// SqlDataSource2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAccType;
-        
-        /// <summary>
-        /// SqlDataSourceBalType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceBalType;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }

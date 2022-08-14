@@ -20,6 +20,7 @@ namespace PointOfSaleWebApp
                     btnAdd.Visible = true;
                     btnCancel.Visible = false;
                     btnUpdate.Visible = false;
+                    btnDelete.Visible = false;
                     //panelAdd.Visible = true;
                     //panelEdit.Visible = false;
                 }
@@ -28,6 +29,7 @@ namespace PointOfSaleWebApp
                     btnAdd.Visible = false;
                     btnCancel.Visible = true;
                     btnUpdate.Visible = true;
+                    btnDelete.Visible = true;
 
                     //panelAdd.Visible = false;
                     //panelEdit.Visible = true;
@@ -64,7 +66,6 @@ namespace PointOfSaleWebApp
             AccountsDetailsRepo repo = new AccountsDetailsRepo();
             AccountsDetailsModel model = new AccountsDetailsModel();
 
-            model.AccountId = Convert.ToInt32(AccId.Text);
             model.AccountTitle = AccTitle.Text;
             model.OpeningBalance = Convert.ToDecimal(OpnBal.Text);
             model.AccBalanceTypeId = Convert.ToInt32(BalType.SelectedValue);
@@ -100,7 +101,6 @@ namespace PointOfSaleWebApp
 
             int id = Convert.ToInt32(Request.QueryString["id"]);
 
-            model.AccountId = Convert.ToInt32(AccId.Text);
             model.AccountTitle = AccTitle.Text;
             model.OpeningBalance = Convert.ToDecimal(OpnBal.Text);
             model.AccBalanceTypeId = Convert.ToInt32(BalType.SelectedValue);
@@ -115,6 +115,16 @@ namespace PointOfSaleWebApp
 
             repo.Update(id, model);
             Response.Redirect("AccountsDetails.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            AccountsDetailsRepo repo = new AccountsDetailsRepo();
+            int id = Convert.ToInt32(AccId.Text);
+
+            repo.Delete(id);
+            Response.Redirect("AccountsDetails.aspx");
+
         }
     }
 }

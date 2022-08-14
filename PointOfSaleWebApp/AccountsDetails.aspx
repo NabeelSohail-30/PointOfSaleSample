@@ -33,7 +33,7 @@
                                     <div class="col-2">
                                         <div class="form-group">
                                             <label for="" class="input-heading">Account Id</label>
-                                            <asp:TextBox ID="AccId" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="AccId" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
                                         </div>
                                     </div>
 
@@ -135,7 +135,8 @@
                                     <div class="col-2">
                                         <div class="form-group d-flex justify-content-center">
                                             <asp:Button ID="btnCancel" runat="server" CssClass="btn mr-2" Text="Cancel" OnClick="btnCancel_Click"></asp:Button>
-                                            <asp:Button ID="btnUpdate" runat="server" CssClass="btn ml-2" Text="Update" OnClick="btnUpdate_Click"></asp:Button>
+                                            <asp:Button ID="btnUpdate" runat="server" CssClass="btn ml-2 mr-2" Text="Update" OnClick="btnUpdate_Click"></asp:Button>
+                                            <asp:Button ID="btnDelete" runat="server" CssClass="btn ml-2" Text="Delete" OnClick="btnDelete_Click"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -146,14 +147,8 @@
 
                 <div class="row">
                     <div class="col">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AccountId" DataSourceID="SqlDataSource1" CssClass="grid" OnRowCommand="GridView1_RowCommand">
                             <Columns>
-                                <asp:CommandField ShowDeleteButton="True" />
                                 <asp:TemplateField HeaderText="Account Id">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Bind("AccountId") %>' Text='<%# Bind("AccountId") %>'></asp:LinkButton>
@@ -169,10 +164,7 @@
                 </div>
             </div>
         </main>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PointOfSaleConnectionString %>" DeleteCommand="DELETE FROM [AccountsDetails] WHERE [AccountId] = @AccountId" SelectCommand="SELECT [AccountId], [AccountTitle], [OpeningBalance], [Nature], [STax] FROM [AccountsDetails]">
-            <DeleteParameters>
-                <asp:Parameter Name="AccountId" Type="Int32" />
-            </DeleteParameters>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PointOfSaleConnectionString %>" SelectCommand="SELECT [AccountId], [AccountTitle], [OpeningBalance], [Nature], [STax] FROM [AccountsDetails]">
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSourceAccType" runat="server" ConnectionString="<%$ ConnectionStrings:PointOfSaleConnectionString %>" SelectCommand="SELECT * FROM [AccountType]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSourceBalType" runat="server" ConnectionString="<%$ ConnectionStrings:PointOfSaleConnectionString %>" SelectCommand="SELECT * FROM [AccBalanceType]"></asp:SqlDataSource>

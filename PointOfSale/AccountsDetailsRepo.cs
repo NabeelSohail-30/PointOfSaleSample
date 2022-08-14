@@ -61,10 +61,9 @@ namespace PointOfSale
             SqlConnection conn = new SqlConnection(CS);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO AccountsDetails(AccountId, AccountTitle, OpeningBalance, AccBalanceTypeId, Nature, STax, Ntn, Phone, Address, LeaveAc, ActiveAc, AccountTypeId) VALUES(@AccountId, @AccountTitle, @OpeningBalance, @AccBalanceTypeId, @Nature, @STax, @Ntn, @Phone, @Address, @LeaveAc, @ActiveAc, @AccountTypeId)";
+            cmd.CommandText = "INSERT INTO AccountsDetails(AccountTitle, OpeningBalance, AccBalanceTypeId, Nature, STax, Ntn, Phone, Address, LeaveAc, ActiveAc, AccountTypeId) VALUES(@AccountTitle, @OpeningBalance, @AccBalanceTypeId, @Nature, @STax, @Ntn, @Phone, @Address, @LeaveAc, @ActiveAc, @AccountTypeId)";
 
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Parameters.AddWithValue("@AccountId", model.AccountId);
             cmd.Parameters.AddWithValue("@AccountTitle", model.AccountTitle);
             cmd.Parameters.AddWithValue("@OpeningBalance", model.OpeningBalance);
             cmd.Parameters.AddWithValue("@AccBalanceTypeId", model.AccBalanceTypeId);
@@ -93,11 +92,10 @@ namespace PointOfSale
             SqlConnection conn = new SqlConnection(CS);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "UPDATE AccountsDetails SET AccountId = @AccountId, AccountTitle = @AccountTitle, OpeningBalance = @OpeningBalance, AccBalanceTypeId = @AccBalanceTypeId, Nature = @Nature, STax = @STax, Ntn = @Ntn, Phone = @Phone, Address = @Address, LeaveAc = @LeaveAc, ActiveAc = @ActiveAc, AccountTypeId = @AccountTypeId WHERE (AccountId = @id)";
+            cmd.CommandText = "UPDATE AccountsDetails SET AccountTitle = @AccountTitle, OpeningBalance = @OpeningBalance, AccBalanceTypeId = @AccBalanceTypeId, Nature = @Nature, STax = @STax, Ntn = @Ntn, Phone = @Phone, Address = @Address, LeaveAc = @LeaveAc, ActiveAc = @ActiveAc, AccountTypeId = @AccountTypeId WHERE (AccountId = @id)";
 
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@AccountId", model.AccountId);
             cmd.Parameters.AddWithValue("@AccountTitle", model.AccountTitle);
             cmd.Parameters.AddWithValue("@OpeningBalance", model.OpeningBalance);
             cmd.Parameters.AddWithValue("@AccBalanceTypeId", model.AccBalanceTypeId);
@@ -109,6 +107,28 @@ namespace PointOfSale
             cmd.Parameters.AddWithValue("@LeaveAc", model.LeaveAc);
             cmd.Parameters.AddWithValue("@ActiveAc", model.ActiveAc);
             cmd.Parameters.AddWithValue("@AccountTypeId", model.AccountTypeId);
+            cmd.Connection = conn;
+
+            if (conn.State == System.Data.ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+
+            return cmd.ExecuteNonQuery();
+        }
+
+        public int Delete(int id)
+        {
+            string CS = ConfigurationManager.ConnectionStrings["PointOfSaleConnectionString"].ConnectionString;
+
+            SqlConnection conn = new SqlConnection(CS);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "DELETE AccountsDetails WHERE (AccountId = @id)";
+
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.Parameters.AddWithValue("@id", id);
+
             cmd.Connection = conn;
 
             if (conn.State == System.Data.ConnectionState.Closed)
