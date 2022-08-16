@@ -11,6 +11,9 @@ namespace PointOfSale
         public int ItemCode { get; set; }
         public string Description { get; set; }
         public int CategoryId { get; set; }
+        public int Qty { get; set; }
         public int Unit { get; set; }
+        public decimal sPrice { get; set; }
+        public decimal pPrice { get; set; }
     }
 }

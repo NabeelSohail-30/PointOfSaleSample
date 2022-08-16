@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace PointOfSaleWebApp
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class SalesInvoice : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,12 +16,7 @@ namespace PointOfSaleWebApp
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AccountsDetails.aspx");
-        }
-
-        protected void Unnamed2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ItemCoding.aspx");
+            Response.Redirect("Dashboard.aspx");
         }
     }
 }

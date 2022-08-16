@@ -10,7 +10,7 @@
 namespace PointOfSaleWebApp {
     
     
-    public partial class ItemCoding {
+    public partial class SalesInvoice {
         
         /// <summary>
         /// form1 control.
@@ -40,13 +40,13 @@ namespace PointOfSaleWebApp {
         protected global::System.Web.UI.WebControls.Panel panelAdd;
         
         /// <summary>
-        /// Code control.
+        /// ItemCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Code;
+        protected global::System.Web.UI.WebControls.DropDownList ItemCode;
         
         /// <summary>
         /// Desc control.
@@ -56,15 +56,6 @@ namespace PointOfSaleWebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Desc;
-        
-        /// <summary>
-        /// Catg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Catg;
         
         /// <summary>
         /// Qty control.
@@ -82,25 +73,25 @@ namespace PointOfSaleWebApp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Unit;
+        protected global::System.Web.UI.WebControls.TextBox Unit;
         
         /// <summary>
-        /// pPrice control.
+        /// Rate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pPrice;
+        protected global::System.Web.UI.WebControls.TextBox Rate;
         
         /// <summary>
-        /// sPrice control.
+        /// Amount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sPrice;
+        protected global::System.Web.UI.WebControls.TextBox Amount;
         
         /// <summary>
         /// btnAdd control.
@@ -110,33 +101,6 @@ namespace PointOfSaleWebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdd;
-        
-        /// <summary>
-        /// btnCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
-        
-        /// <summary>
-        /// btnUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
-        
-        /// <summary>
-        /// btnDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
         /// GridView1 control.
@@ -164,14 +128,5 @@ namespace PointOfSaleWebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
-        /// <summary>
-        /// SqlDataSource3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
     }
 }

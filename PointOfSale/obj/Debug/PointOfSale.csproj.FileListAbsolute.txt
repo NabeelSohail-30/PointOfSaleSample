@@ -3,3 +3,8 @@ E:\Projects\Working\PointOfSaleWebApp\PointOfSale\bin\Debug\PointOfSale.pdb
 E:\Projects\Working\PointOfSaleWebApp\PointOfSale\obj\Debug\PointOfSale.csprojResolveAssemblyReference.cache
 E:\Projects\Working\PointOfSaleWebApp\PointOfSale\obj\Debug\PointOfSale.dll
 E:\Projects\Working\PointOfSaleWebApp\PointOfSale\obj\Debug\PointOfSale.pdb
+E:\Projects\Working\PointOfSales\PointOfSaleWebApp\PointOfSale\bin\Debug\PointOfSale.dll
+E:\Projects\Working\PointOfSales\PointOfSaleWebApp\PointOfSale\bin\Debug\PointOfSale.pdb
+E:\Projects\Working\PointOfSales\PointOfSaleWebApp\PointOfSale\obj\Debug\PointOfSale.csprojResolveAssemblyReference.cache
+E:\Projects\Working\PointOfSales\PointOfSaleWebApp\PointOfSale\obj\Debug\PointOfSale.dll
+E:\Projects\Working\PointOfSales\PointOfSaleWebApp\PointOfSale\obj\Debug\PointOfSale.pdb

@@ -10,12 +10,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <header>
+            <asp:Button runat="server" Text="Exit" OnClick="Unnamed1_Click" CssClass="btn-exit"/>
+        </header>
+
         <div>
             <div class="banner">
                 <img src="Images/items.png" alt="" class="banner-img">
             </div>
         </div>
-        
+
         <main>
             <div class="container-fluid">
                 <div class="row">
@@ -36,24 +40,48 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label for="" class="input-heading">Description</label>
                                             <asp:TextBox ID="Desc" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
 
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <div class="form-group">
                                             <label for="" class="input-heading">Category</label>
                                             <asp:DropDownList ID="Catg" runat="server" CssClass="form-control" DataSourceID="SqlDataSource2" DataTextField="Category" DataValueField="CaegoryId"></asp:DropDownList>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label for="" class="input-heading">Qty</label>
+                                            <asp:TextBox ID="Qty" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
 
                                     <div class="col-3">
                                         <div class="form-group">
                                             <label for="" class="input-heading">Unit</label>
-                                            <asp:TextBox ID="Unit" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:DropDownList ID="Unit" runat="server" CssClass="form-control" DataSourceID="SqlDataSource3" DataTextField="Unit" DataValueField="UnitId"></asp:DropDownList>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label for="" class="input-heading">Purchase Price</label>
+                                            <asp:TextBox ID="pPrice" runat="server" CssClass="form-control"></asp:TextBox>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label for="" class="input-heading">Sales Price</label>
+                                            <asp:TextBox ID="sPrice" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -69,9 +97,9 @@
                                 <div class="row d-flex justify-content-center mt-2">
                                     <div class="col-2">
                                         <div class="form-group d-flex justify-content-center">
-                                            <asp:Button ID="btnCancel" runat="server" CssClass="btn mr-2" Text="Cancel" OnClick="btnCancel_Click" ></asp:Button>
-                                            <asp:Button ID="btnUpdate" runat="server" CssClass="btn ml-2 mr-2" Text="Update" OnClick="btnUpdate_Click" ></asp:Button>
-                                            <asp:Button ID="btnDelete" runat="server" CssClass="btn ml-2" Text="Delete" OnClick="btnDelete_Click" ></asp:Button>
+                                            <asp:Button ID="btnCancel" runat="server" CssClass="btn mr-2" Text="Cancel" OnClick="btnCancel_Click"></asp:Button>
+                                            <asp:Button ID="btnUpdate" runat="server" CssClass="btn ml-2 mr-2" Text="Update" OnClick="btnUpdate_Click"></asp:Button>
+                                            <asp:Button ID="btnDelete" runat="server" CssClass="btn ml-2" Text="Delete" OnClick="btnDelete_Click"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +119,10 @@
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                                 <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
+                                <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" />
                                 <asp:BoundField DataField="Unit" HeaderText="Unit" SortExpression="Unit" />
+                                <asp:BoundField DataField="PurchasePrice" HeaderText="PurchasePrice" SortExpression="PurchasePrice" />
+                                <asp:BoundField DataField="SalesPrice" HeaderText="SalesPrice" SortExpression="SalesPrice" />
                             </Columns>
                         </asp:GridView>
                     </div>
@@ -101,6 +132,8 @@
 
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PointOfSaleConnectionString %>" SelectCommand="SELECT * FROM [view_ItemsDetails]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PointOfSaleConnectionString %>" SelectCommand="SELECT * FROM [ItemCategory]"></asp:SqlDataSource>
+
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:PointOfSaleConnectionString %>" SelectCommand="SELECT * FROM [Units]"></asp:SqlDataSource>
 
     </form>
 </body>

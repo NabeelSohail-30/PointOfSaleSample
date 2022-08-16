@@ -10,6 +10,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <header>
+            <asp:Button runat="server" Text="Exit" OnClick="Unnamed1_Click" CssClass="btn-exit"/>
+        </header>
+
         <div>
             <div class="banner">
                 <img src="Images/chart-of-account.jpeg" alt="" class="banner-img">

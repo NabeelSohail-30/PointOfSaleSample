@@ -44,7 +44,11 @@ namespace PointOfSaleWebApp
             Code.Text = model.ItemCode.ToString();
             Desc.Text = model.Description.ToString();
             Catg.SelectedValue = model.CategoryId.ToString();
-            Unit.Text = model.Unit.ToString();
+            Unit.SelectedValue = model.Unit.ToString();
+            Qty.Text = model.Qty.ToString();
+            sPrice.Text = model.sPrice.ToString();
+            pPrice.Text = model.pPrice.ToString();
+
 
         }
 
@@ -61,7 +65,10 @@ namespace PointOfSaleWebApp
 
             model.Description = Desc.Text;
             model.CategoryId = Convert.ToInt32(Catg.SelectedValue);
-            model.Unit = Convert.ToInt32(Unit.Text);
+            model.Qty = Convert.ToInt32(Qty.Text);
+            model.Unit = Convert.ToInt32(Unit.SelectedValue);
+            model.sPrice = Convert.ToDecimal(sPrice.Text);
+            model.pPrice = Convert.ToDecimal(pPrice.Text);
 
             repo.Add(model);
 
@@ -84,7 +91,10 @@ namespace PointOfSaleWebApp
 
             model.Description = Desc.Text;
             model.CategoryId = Convert.ToInt32(Catg.SelectedValue);
-            model.Unit = Convert.ToInt32(Unit.Text);
+            model.Qty = Convert.ToInt32(Qty.Text);
+            model.Unit = Convert.ToInt32(Unit.SelectedValue);
+            model.sPrice = Convert.ToDecimal(sPrice.Text);
+            model.pPrice = Convert.ToDecimal(pPrice.Text);
 
             repo.Update(id, model);
 
@@ -97,6 +107,11 @@ namespace PointOfSaleWebApp
             int id = Convert.ToInt32(Code.Text);
             repo.Delete(id);
             Response.Redirect("ItemCoding.aspx");
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Dashboard.aspx");
         }
     }
 }

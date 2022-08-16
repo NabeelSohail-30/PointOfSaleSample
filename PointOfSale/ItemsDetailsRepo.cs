@@ -36,7 +36,10 @@ namespace PointOfSale
                 model.ItemCode = Convert.ToInt32(dr["ItemCode"]);
                 model.Description = dr["Description"].ToString();
                 model.CategoryId = Convert.ToInt32(dr["CategoryId"]);
-                model.Unit = Convert.ToInt32(dr["Unit"]);
+                model.Qty = Convert.ToInt32(dr["Qty"]);
+                model.Unit = Convert.ToInt32(dr["UnitId"]);
+                model.sPrice = Convert.ToDecimal(dr["SalesPrice"]);
+                model.pPrice = Convert.ToDecimal(dr["PurchasePrice"]);
             }
 
             conn.Close();
@@ -53,12 +56,15 @@ namespace PointOfSale
             SqlConnection conn = new SqlConnection(CS);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO ItemsDetails(Description, CategoryId, Unit) VALUES(@Description, @CategoryId, @Unit)";
+            cmd.CommandText = "INSERT INTO ItemsDetails(Description, CategoryId, Qty, UnitId, PurchasePrice, SalesPrice) VALUES(@Description, @CategoryId, @Qty, @UnitId, @pPrice, @sPrice)";
 
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Parameters.AddWithValue("@Description", model.Description);
             cmd.Parameters.AddWithValue("@CategoryId", model.CategoryId);
-            cmd.Parameters.AddWithValue("@Unit", model.Unit);
+            cmd.Parameters.AddWithValue("@UnitId", model.Unit);
+            cmd.Parameters.AddWithValue("@Qty", model.Qty);
+            cmd.Parameters.AddWithValue("@pPrice", model.pPrice);
+            cmd.Parameters.AddWithValue("@sPrice", model.sPrice);
             cmd.Connection = conn;
 
             if (conn.State == System.Data.ConnectionState.Closed)
@@ -76,14 +82,16 @@ namespace PointOfSale
             SqlConnection conn = new SqlConnection(CS);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "UPDATE ItemsDetails SET Description = @Description, CategoryId = @CategoryId, Unit = @Unit WHERE (ItemCode = @id)";
+            cmd.CommandText = "UPDATE ItemsDetails SET Description = @Description, CategoryId = @CategoryId, UnitId = @UnitId, Qty = @Qty, PurchasePrice= @pPrice, SalesPrice = @sPrice WHERE (ItemCode = @id)";
 
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@Description", model.Description);
             cmd.Parameters.AddWithValue("@CategoryId", model.CategoryId);
-            cmd.Parameters.AddWithValue("@Unit", model.Unit);
-            
+            cmd.Parameters.AddWithValue("@UnitId", model.Unit);
+            cmd.Parameters.AddWithValue("@Qty", model.Qty);
+            cmd.Parameters.AddWithValue("@pPrice", model.pPrice);
+            cmd.Parameters.AddWithValue("@sPrice", model.sPrice);
             cmd.Connection = conn;
 
             if (conn.State == System.Data.ConnectionState.Closed)

@@ -126,5 +126,10 @@ namespace PointOfSaleWebApp
             Response.Redirect("AccountsDetails.aspx");
 
         }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Dashboard.aspx");
+        }
     }
 }

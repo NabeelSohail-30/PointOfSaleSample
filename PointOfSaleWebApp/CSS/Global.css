@@ -17,6 +17,32 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+header{
+    margin:10px;
+}
+
+.btn-exit{
+    padding: 6px 12px;
+    background-color: var(--red);
+    border-radius: 0px;
+    border: none;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    width:100px;
+}
+
+.btn-exit:hover{
+    padding: 6px 12px;
+    background-color: var(--white);
+    border-radius: 0px;
+    border: none;
+    color: var(--red);
+    font-size: 16px;
+    font-weight: bold;
+    width:100px;
+}
+
 body {
     background-color: var(--dark_blue);
 }
